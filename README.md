@@ -24,3 +24,18 @@
 
                     }
                 });
+
+### 动态权限监测
+        new RxPermissions(this)
+                .request(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(@io.reactivex.annotations.NonNull Boolean aBoolean) throws Exception {
+                        if (!aBoolean) {
+                            Toast.makeText(MainActivity.this, "请您先允许权限！", Toast.LENGTH_SHORT).show();
+                            return;
+                        } else {
+                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        }
+                    }
+                });
