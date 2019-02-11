@@ -1,5 +1,6 @@
 # RetrofitMvp
-retrofit2 + okhttp3 + rxjava2 + evenbus
+## retrofit2 + okhttp3 + rxjava2 + evenbus
+
         Api.getDefault().getShopBrandAdver()
                 .compose(RxHelper.<ShopBrandAdverBean>handleResult())
                 .subscribe(new RxObserver<ShopBrandAdverBean>((Activity) mView) {
