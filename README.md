@@ -1,6 +1,7 @@
 # RetrofitMvp
-## retrofit2 + okhttp3 + rxjava2 + evenbus
+## 项目框架：retrofit2 + okhttp3 + rxjava2 + evenbus
 
+### 异步获取数据
         Api.getDefault().getShopBrandAdver()
                 .compose(RxHelper.<ShopBrandAdverBean>handleResult())
                 .subscribe(new RxObserver<ShopBrandAdverBean>((Activity) mView) {
